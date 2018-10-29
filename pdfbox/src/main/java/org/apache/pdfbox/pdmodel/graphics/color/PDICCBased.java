@@ -126,7 +126,7 @@ public final class PDICCBased extends PDCIEBasedColorSpace
             // if the embedded profile is sRGB then we can use Java's built-in profile, which
             // results in a large performance gain as it's our native color space, see PDFBOX-2587
             ICC_Profile profile;
-            synchronized (LOG)
+            synchronized (this)
             {
                 profile = ICC_Profile.getInstance(input);
                 if (is_sRGB(profile))
